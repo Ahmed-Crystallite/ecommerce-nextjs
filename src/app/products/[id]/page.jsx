@@ -37,9 +37,9 @@ import FitnessBand3 from "media/collections/fitness-band/3.png"
 import FitnessEarbuds1 from "media/collections/fitness-earbuds/1.png"
 import FitnessEarbuds2 from "media/collections/fitness-earbuds/2.png"
 import FitnessEarbuds3 from "media/collections/fitness-earbuds/3.png"
-import AirPods1 from "media/collections/airPods/1.png"
-import AirPods2 from "media/collections/airPods/2.png"
-import AirPods3 from "media/collections/airPods/3.png"
+import AirPods1 from "media/collections/airpods/1.png"
+import AirPods2 from "media/collections/airpods/2.png"
+import AirPods3 from "media/collections/airpods/3.png"
 import { useCart } from "@/components/cart/CartContext";
 import { Reviews, Tabs, TabsContent, TabsList, TabsTrigger } from "@/components";
 

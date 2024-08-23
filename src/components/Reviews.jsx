@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { AnimatedList } from "@/components/magicui/animated-list";
+import { AnimatedList } from "@/components/magicui/Animated-List";
 import Image from "next/image";
 import Avater from "media/avater/1.png"
 
