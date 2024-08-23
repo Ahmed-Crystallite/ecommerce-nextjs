@@ -43,7 +43,7 @@ import AirPods3 from "media/collections/airPods/3.png"
 import { useCart } from "@/components/cart/CartContext";
 import { Reviews, Tabs, TabsContent, TabsList, TabsTrigger } from "@/components";
 
-const ProductDetail = ({ searchQuery }) => {
+const ProductDetail = () => {
     const [product, setProduct] = useState(null);
     const { incrementCart } = useCart();
     useEffect(() => {
@@ -51,12 +51,12 @@ const ProductDetail = ({ searchQuery }) => {
         const productData = {
             1: {
                 img: [
-                NavyBlueSweatshirt1, 
-                NavyBlueSweatshirt2, 
-                NavyBlueSweatshirt3, 
-                NavyBlueSweatshirt4, 
-                NavyBlueSweatshirt5
-            ], 
+                    NavyBlueSweatshirt1,
+                    NavyBlueSweatshirt2,
+                    NavyBlueSweatshirt3,
+                    NavyBlueSweatshirt4,
+                    NavyBlueSweatshirt5
+                ],
                 title: "Men Navy Blue Solid Sweatshirt",
                 desc: "United Colors of Benetton",
                 amount: "2599",
@@ -64,10 +64,10 @@ const ProductDetail = ({ searchQuery }) => {
             },
             2: {
                 img: [
-                SweatSportyJacket1,
-                SweatSportyJacket2,
-                SweatSportyJacket3
-            ], 
+                    SweatSportyJacket1,
+                    SweatSportyJacket2,
+                    SweatSportyJacket3
+                ],
                 title: "Men Black MAMGP T7 Sweat Sporty Jacket",
                 desc: "Puma",
                 amount: "7999",
@@ -75,13 +75,13 @@ const ProductDetail = ({ searchQuery }) => {
             },
             3: {
                 img: [
-                ParkviewLifestyleShoes1,
-                ParkviewLifestyleShoes2,
-                ParkviewLifestyleShoes3,
-                ParkviewLifestyleShoes4,
-                ParkviewLifestyleShoes5,
-                ParkviewLifestyleShoes6
-            ], 
+                    ParkviewLifestyleShoes1,
+                    ParkviewLifestyleShoes2,
+                    ParkviewLifestyleShoes3,
+                    ParkviewLifestyleShoes4,
+                    ParkviewLifestyleShoes5,
+                    ParkviewLifestyleShoes6
+                ],
                 title: "Men Black Action Parkview Lifestyle Shoes",
                 desc: "Hush Puppies",
                 amount: "6999",
@@ -89,12 +89,12 @@ const ProductDetail = ({ searchQuery }) => {
             },
             4: {
                 img: [
-                LightweightLeatherJacket1,
-                LightweightLeatherJacket2,
-                LightweightLeatherJacket3,
-                LightweightLeatherJacket4,
-                LightweightLeatherJacket5
-            ], 
+                    LightweightLeatherJacket1,
+                    LightweightLeatherJacket2,
+                    LightweightLeatherJacket3,
+                    LightweightLeatherJacket4,
+                    LightweightLeatherJacket5
+                ],
                 title: "Women Black Solid Lightweight Leather Jacket",
                 desc: "BARESKIN",
                 amount: "9999",
@@ -102,12 +102,12 @@ const ProductDetail = ({ searchQuery }) => {
             },
             5: {
                 img: [
-                BlueSolidShirtDress1,
-                BlueSolidShirtDress2,
-                BlueSolidShirtDress3,
-                BlueSolidShirtDress4,
-                BlueSolidShirtDress5
-            ], 
+                    BlueSolidShirtDress1,
+                    BlueSolidShirtDress2,
+                    BlueSolidShirtDress3,
+                    BlueSolidShirtDress4,
+                    BlueSolidShirtDress5
+                ],
                 title: "Women Blue Solid Shirt Dress",
                 desc: "SASSAFRAS",
                 amount: "5200",
@@ -115,10 +115,10 @@ const ProductDetail = ({ searchQuery }) => {
             },
             6: {
                 img: [
-                SmartWatch1,
-                SmartWatch2,
-                SmartWatch3
-            ], 
+                    SmartWatch1,
+                    SmartWatch2,
+                    SmartWatch3
+                ],
                 title: "Unisex Silver-Toned Series 3 Smart Watch",
                 desc: "Apple",
                 amount: "31999",
@@ -126,10 +126,10 @@ const ProductDetail = ({ searchQuery }) => {
             },
             7: {
                 img: [
-                SmartBand1,
-                SmartBand2,
-                SmartBand3
-            ], 
+                    SmartBand1,
+                    SmartBand2,
+                    SmartBand3
+                ],
                 title: "Unisex Black & Green Reflex 2.0 Smart Band",
                 desc: "Fastrack",
                 amount: "1999",
@@ -137,10 +137,10 @@ const ProductDetail = ({ searchQuery }) => {
             },
             8: {
                 img: [
-                FitnessBand1,
-                FitnessBand2,
-                FitnessBand3
-            ], 
+                    FitnessBand1,
+                    FitnessBand2,
+                    FitnessBand3
+                ],
                 title: "Unisex Black Galaxy Fit Fitness Band",
                 desc: "Samsung",
                 amount: "9990",
@@ -148,10 +148,10 @@ const ProductDetail = ({ searchQuery }) => {
             },
             9: {
                 img: [
-                FitnessEarbuds1,
-                FitnessEarbuds2,
-                FitnessEarbuds3
-            ], 
+                    FitnessEarbuds1,
+                    FitnessEarbuds2,
+                    FitnessEarbuds3
+                ],
                 title: "Gear IconX Black Cord-free Fitness Earbuds",
                 desc: "Samsung",
                 amount: "13990",
@@ -159,10 +159,10 @@ const ProductDetail = ({ searchQuery }) => {
             },
             10: {
                 img: [
-                AirPods1,
-                AirPods2,
-                AirPods3
-            ], 
+                    AirPods1,
+                    AirPods2,
+                    AirPods3
+                ],
                 title: "White 2nd Gen AirPods with Charging Case",
                 desc: "Apple",
                 amount: "14999",
@@ -170,12 +170,8 @@ const ProductDetail = ({ searchQuery }) => {
             },
         }[id];
 
-        const filteredProducts = Object.values(product || {}).filter(item =>
-            item.title.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-
-        setProduct(filteredProducts);
-    }, [searchQuery]);
+        setProduct(productData);
+    }, []);
     if (!product) return (
         <div className="container">
             <div className="flex items-center justify-center h-screen">
@@ -189,7 +185,7 @@ const ProductDetail = ({ searchQuery }) => {
                 <div className="grid md:grid-cols-12 grid-cols-1 gap-10 items-center xl:w-[80%] w-full mx-auto sm:mt-10 mt-5">
                     <div className="lg:col-span-5 md:col-span-6">
                         {
-                            product.img && product.map((e, i) => (
+                            product.img && product.img.map((e, i) => (
                                 <TabsContent key={i} value={`image${++i}`}>
                                     <Image src={e} alt={`navy-blue-sweatshirt${i++}`} width={405} height={540} className="rounded-sm transition-all ease-in-out duration-500 hover:shadow-[1px_0px_9px_1px_rgb(3,_122,_122)] hover:scale-105 block mx-auto" />
                                 </TabsContent>
@@ -204,7 +200,7 @@ const ProductDetail = ({ searchQuery }) => {
                         <p className="md:text-base text-sm leading-normal font-normal text-black">{product.details}</p>
                         <TabsList className="mt-5">
                             {
-                                product.img && product.map((e, i) => (
+                                product.img && product.img.map((e, i) => (
                                     <TabsTrigger key={i} value={`image${++i}`} className="p-0 pe-4">
                                         <Image src={e} width={80} height={80} alt={`navy-blue-sweatshirt${i++}`} className="transition-all ease-in-out duration-300 hover:opacity-60 cursor-pointer rounded-sm" />
                                     </TabsTrigger>
