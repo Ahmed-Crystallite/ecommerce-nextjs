@@ -5,5 +5,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: '/products/:path*',
+  matcher: '/products-details/:path*',
 };

@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useCart } from "./cart/CartContext";
 import { useState } from "react";
-import ProductDetail from "@/app/products/[id]/page";
 import SearchInput from "./SearchInput";
 
 const Header = () => {
@@ -19,10 +18,10 @@ const Header = () => {
                     <ul className={`lg:flex justify-center grid grid-cols-1 lg:static absolute transition-all duration-500 ease-in-out lg:translate-y-0 lg:bg-transparent lg:p-0 z-10 gap-5 font-semibold ${!openIndex ? "-translate-y-full" : "translate-y-0 bg-black/80 right-0 text-white py-4 px-4 lg:top-0 top-14 rounded-xl"}`}>
                         {
                             [
-                                "Products", "Inspiration", "Rooms"
+                                "products", "inspiration", "rooms"
                             ].map((e, i) => (
                                 <li key={i}>
-                                    <Link href={`/${e}`}>{e}</Link>
+                                    <Link href={`/${e}`} className="capitalize">{e}</Link>
                                 </li>
                             ))
                         }

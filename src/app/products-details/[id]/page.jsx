@@ -187,7 +187,7 @@ const ProductDetail = () => {
                         {
                             product.img && product.img.map((e, i) => (
                                 <TabsContent key={i} value={`image${++i}`}>
-                                    <Image src={e} alt={`navy-blue-sweatshirt${i++}`} width={405} height={540} className="rounded-sm transition-all ease-in-out duration-500 hover:shadow-[1px_0px_9px_1px_rgb(3,_122,_122)] hover:scale-105 block mx-auto" />
+                                    <Image src={e} alt={`navy-blue-sweatshirt${i++}`} width={405} height={540} draggable="false" className="rounded-sm transition-all ease-in-out duration-500 hover:shadow-[1px_0px_9px_1px_rgb(3,_122,_122)] hover:scale-105 block mx-auto" />
                                 </TabsContent>
                             ))
                         }
@@ -202,7 +202,7 @@ const ProductDetail = () => {
                             {
                                 product.img && product.img.map((e, i) => (
                                     <TabsTrigger key={i} value={`image${++i}`} className="p-0 pe-4">
-                                        <Image src={e} width={80} height={80} alt={`navy-blue-sweatshirt${i++}`} className="transition-all ease-in-out duration-300 hover:opacity-60 cursor-pointer rounded-sm" />
+                                        <Image src={e} width={80} height={80} alt={`navy-blue-sweatshirt${i++}`} draggable="false" className="transition-all ease-in-out duration-300 hover:opacity-60 cursor-pointer rounded-sm" />
                                     </TabsTrigger>
                                 ))
                             }
