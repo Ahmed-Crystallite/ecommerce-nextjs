@@ -1,24 +1,40 @@
-"use client"
+"use client";
 import { createContext, useContext, useState } from 'react';
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-    const [cartCount, setCartCount] = useState(0);
+    const [cartItems, setCartItems] = useState([]);
 
-    const incrementCart = () => setCartCount(cartCount + 1);
+    const addToCart = (product) => {
+        setCartItems((prevItems) => {
+            const existingProductIndex = prevItems.findIndex(
+                (item) => item.id === product.id
+            );
+
+            if (existingProductIndex !== -1) {
+                const updatedItems = [...prevItems];
+                updatedItems[existingProductIndex].quantity += 1;
+                return updatedItems;
+            }
+
+            return [...prevItems, { ...product, quantity: 1 }];
+        });
+    };
+
+    const updateQuantity = (productId, quantity) => {
+        setCartItems((prevItems) =>
+            prevItems.map((item) =>
+                item.id === productId ? { ...item, quantity } : item
+            )
+        );
+    };
 
     return (
-        <CartContext.Provider value={{ cartCount, incrementCart }}>
+        <CartContext.Provider value={{ cartItems, addToCart, updateQuantity }}>
             {children}
         </CartContext.Provider>
     );
 };
 
-export const useCart = () => {
-    const context = useContext(CartContext);
-    if (context === undefined) {
-        throw new Error('useCart must be used within a CartProvider');
-    }
-    return context;
-};
+export const useCart = () => useContext(CartContext);

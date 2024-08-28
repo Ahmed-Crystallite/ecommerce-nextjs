@@ -29,27 +29,33 @@ const Card = ({
     return (
         <section>
             <div className="relative py-[40px]">
-            <div className="container">
-                <h2 className="md:text-3xl sm:text-2xl text-lg text-black capitalize font-medium leading-tight mb-6">Our Unique Collections</h2>
-                <div className={`grid ${gridsColumn} gap-5 overflow-hidden`}>
-                    {products.map(({ id, image, title, desc, amount }) => (
-                        <Link key={id} href={`/products-details/${id}`}>
-                            <div className="text-black shadow-xl group hover:shadow-2xl transition-all duration-300 ease-in-out bg-slate-100 rounded-xl p-4">
-                                <Image
-                                    src={image}
-                                    alt="products"
-                                    className="transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:rounded-xl"
-                                />
-                                <h3 className={`sm:text-base text-sm leading-normal font-medium mt-2 ${elipses}`}>{title}</h3>
-                                <span className="block sm:text-sm text-xs font-light my-1">{desc}</span>
-                                <span className="block sm:text-xl text-base font-semibold mt-1 text-[rgb(3,_94,_94)]">Rs {amount}</span>
-                            </div>
-                        </Link>
-                    ))}
+                <div className="container">
+                    <h2 className="md:text-3xl sm:text-2xl text-lg text-black capitalize font-medium leading-tight mb-6">Our Unique Collections</h2>
+                    <div className={`grid ${gridsColumn} gap-5 overflow-hidden`}>
+                        {products.length > 0 ? (
+                            products.map(({ id, image, title, desc, amount }) => (
+                                <Link key={id} href={`/products-details/${id}`}>
+                                    <div className="text-black shadow-xl group hover:shadow-2xl transition-all duration-300 ease-in-out bg-slate-100 rounded-xl p-4">
+                                        <Image
+                                            src={image}
+                                            alt="products"
+                                            className="transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:rounded-xl"
+                                            priority={true}
+                                        />
+                                        <h3 className={`sm:text-base text-sm leading-normal font-medium mt-2 ${elipses}`}>{title}</h3>
+                                        <span className="block sm:text-sm text-xs font-light my-1">{desc}</span>
+                                        <span className="block sm:text-xl text-base font-semibold mt-1 text-[rgb(3,_94,_94)]">Rs {amount}</span>
+                                    </div>
+                                </Link>
+                            ))
+                        ) : (
+                            <p className="text-center text-red-900 font-medium text-xl">No products found matching the selected filters.</p>
+                        )}
+                    </div>
                 </div>
-            </div>
             </div>
         </section>
     )
 }
 export default Card;
+// 

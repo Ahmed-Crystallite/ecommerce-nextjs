@@ -45,7 +45,6 @@ import { Reviews, Tabs, TabsContent, TabsList, TabsTrigger } from "@/components"
 
 const ProductDetail = () => {
     const [product, setProduct] = useState(null);
-    const { incrementCart } = useCart();
     useEffect(() => {
         const id = window.location.pathname.split("/").pop();
         const productData = {
@@ -172,10 +171,24 @@ const ProductDetail = () => {
 
         setProduct(productData);
     }, []);
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        addToCart({
+            id: product.id,
+            title: product.title,
+            amount: product.amount,
+            image: product.img[0], 
+        });
+    };
     if (!product) return (
         <div className="container">
-            <div className="flex items-center justify-center h-screen">
-                <p className="text-center text-6xl font-bold">Loading...</p>
+            <div className="flex items-center justify-center gap-5 h-screen">
+                <p className="text-center text-6xl font-bold">Loading</p>
+                <span className="relative flex h-10 w-10">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-10 w-10 bg-sky-500"></span>
+                </span>
             </div>
         </div>
     );
@@ -207,9 +220,7 @@ const ProductDetail = () => {
                                 ))
                             }
                         </TabsList>
-                        <div className="flex items-center">
-                            <button type="button" className="bg-slate-600 text-white md:text-lg text-base leading-normal font-medium block w-max h-12 px-6 mt-5 rounded-lg" onClick={incrementCart}>Add To Cart</button>
-                        </div>
+                            <button type="button" className="bg-slate-600 text-white md:text-lg text-base leading-normal font-medium block w-max h-12 px-6 mt-5 rounded-lg" onClick={handleAddToCart}>Add To Cart</button>
                     </div>
                 </div>
             </Tabs>

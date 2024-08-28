@@ -27,7 +27,7 @@ export function Combobox({
   const [value, setValue] = React.useState("")
 
   return (
-    <div className="relative">
+    <div className="relative mb-3">
     <span className="inline-block mr-2 font-semibold leading-tight">{title}</span>
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -49,7 +49,7 @@ export function Combobox({
           <CommandList>
             <CommandEmpty className="font-medium px-2">No collections found.</CommandEmpty>
             <CommandGroup>
-              {collections.map((collection) => (
+              {(collections || []).map((collection) => (
                 <CommandItem
                   key={collection.value}
                   value={collection.value}

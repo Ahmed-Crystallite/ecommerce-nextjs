@@ -7,6 +7,7 @@ const Card = dynamic(() => import('./products/Card'))
 const Reviews = dynamic(() => import('./Reviews'))
 const CartContext = dynamic(() => import('./cart/CartContext'))
 const SearchInput = dynamic(() => import('./SearchInput'))
+const FilteredData = dynamic(() => import('./products/filters/FilteredData'))
 import { Button } from "./ui/Button"
 import { Checkbox } from "./ui/Checkbox"
 import { Combobox } from "./ComboBox"
@@ -55,6 +56,24 @@ import {
     TooltipProvider,
     TooltipTrigger
 } from "./ui/Tooltip"
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "./ui/Sheet"
+import {
+    Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
+} from "./ui/Drawer"
 
 export {
     Header,
@@ -100,5 +119,20 @@ export {
     Tooltip,
     TooltipContent,
     TooltipProvider,
-    TooltipTrigger
+    TooltipTrigger,
+    FilteredData,
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+    Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
 };
