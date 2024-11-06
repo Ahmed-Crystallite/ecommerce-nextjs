@@ -1,11 +1,13 @@
-import { Card, Hero } from "@/components";
+import { Card, Collections, Featured, Hero, WhyChoose } from "@/components";
 
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <Card />
+      <Featured/>
+      <WhyChoose/>
+      <Collections/>
     </>
   )
 }

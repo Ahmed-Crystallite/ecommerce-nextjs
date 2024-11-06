@@ -41,10 +41,11 @@ import AirPods1 from "media/collections/airpods/1.png"
 import AirPods2 from "media/collections/airpods/2.png"
 import AirPods3 from "media/collections/airpods/3.png"
 import { useCart } from "@/components/cart/CartContext";
-import { Reviews, Tabs, TabsContent, TabsList, TabsTrigger } from "@/components";
-
+import { useToast } from "@/hooks/use-toast"
+import { Button, Reviews, Tabs, TabsContent, TabsList, TabsTrigger } from "@/components";
 const ProductDetail = () => {
     const [product, setProduct] = useState(null);
+    const { toast } = useToast()
     useEffect(() => {
         const id = window.location.pathname.split("/").pop();
         const productData = {
@@ -56,6 +57,8 @@ const ProductDetail = () => {
                     NavyBlueSweatshirt4,
                     NavyBlueSweatshirt5
                 ],
+                color: ["bg-primary", "bg-red-600", "bg-[#d4be8d]", "bg-[#838383]", "bg-[#f3f3f3]", "bg-[#0f73ad]"],
+                size: ["XS", "S", "M", "L", "XL", "XXL"],
                 title: "Men Navy Blue Solid Sweatshirt",
                 desc: "United Colors of Benetton",
                 amount: "2599",
@@ -67,6 +70,8 @@ const ProductDetail = () => {
                     SweatSportyJacket2,
                     SweatSportyJacket3
                 ],
+                color: ["bg-primary", "bg-red-600", "bg-[#d4be8d]", "bg-[#838383]", "bg-[#f3f3f3]", "bg-[#0f73ad]"],
+                size: ["XS", "S", "M", "L", "XL", "XXL"],
                 title: "Men Black MAMGP T7 Sweat Sporty Jacket",
                 desc: "Puma",
                 amount: "7999",
@@ -81,6 +86,8 @@ const ProductDetail = () => {
                     ParkviewLifestyleShoes5,
                     ParkviewLifestyleShoes6
                 ],
+                color: ["bg-primary", "bg-red-600", "bg-[#d4be8d]", "bg-[#838383]", "bg-[#f3f3f3]", "bg-[#0f73ad]"],
+                size: ["XS", "S", "M", "L", "XL", "XXL"],
                 title: "Men Black Action Parkview Lifestyle Shoes",
                 desc: "Hush Puppies",
                 amount: "6999",
@@ -94,6 +101,8 @@ const ProductDetail = () => {
                     LightweightLeatherJacket4,
                     LightweightLeatherJacket5
                 ],
+                color: ["bg-primary", "bg-red-600", "bg-[#d4be8d]", "bg-[#838383]", "bg-[#f3f3f3]", "bg-[#0f73ad]"],
+                size: ["XS", "S", "M", "L", "XL", "XXL"],
                 title: "Women Black Solid Lightweight Leather Jacket",
                 desc: "BARESKIN",
                 amount: "9999",
@@ -107,6 +116,8 @@ const ProductDetail = () => {
                     BlueSolidShirtDress4,
                     BlueSolidShirtDress5
                 ],
+                color: ["bg-primary", "bg-red-600", "bg-[#d4be8d]", "bg-[#838383]", "bg-[#f3f3f3]", "bg-[#0f73ad]"],
+                size: ["XS", "S", "M", "L", "XL", "XXL"],
                 title: "Women Blue Solid Shirt Dress",
                 desc: "SASSAFRAS",
                 amount: "5200",
@@ -118,6 +129,8 @@ const ProductDetail = () => {
                     SmartWatch2,
                     SmartWatch3
                 ],
+                color: ["bg-primary", "bg-red-600", "bg-[#d4be8d]", "bg-[#838383]", "bg-[#f3f3f3]", "bg-[#0f73ad]"],
+                size: ["XS", "S", "M", "L", "XL", "XXL"],
                 title: "Unisex Silver-Toned Series 3 Smart Watch",
                 desc: "Apple",
                 amount: "31999",
@@ -129,6 +142,8 @@ const ProductDetail = () => {
                     SmartBand2,
                     SmartBand3
                 ],
+                color: ["bg-primary", "bg-red-600", "bg-[#d4be8d]", "bg-[#838383]", "bg-[#f3f3f3]", "bg-[#0f73ad]"],
+                size: ["XS", "S", "M", "L", "XL", "XXL"],
                 title: "Unisex Black & Green Reflex 2.0 Smart Band",
                 desc: "Fastrack",
                 amount: "1999",
@@ -140,6 +155,8 @@ const ProductDetail = () => {
                     FitnessBand2,
                     FitnessBand3
                 ],
+                color: ["bg-primary", "bg-red-600", "bg-[#d4be8d]", "bg-[#838383]", "bg-[#f3f3f3]", "bg-[#0f73ad]"],
+                size: ["XS", "S", "M", "L", "XL", "XXL"],
                 title: "Unisex Black Galaxy Fit Fitness Band",
                 desc: "Samsung",
                 amount: "9990",
@@ -151,6 +168,8 @@ const ProductDetail = () => {
                     FitnessEarbuds2,
                     FitnessEarbuds3
                 ],
+                color: ["bg-primary", "bg-red-600", "bg-[#d4be8d]", "bg-[#838383]", "bg-[#f3f3f3]", "bg-[#0f73ad]"],
+                size: ["XS", "S", "M", "L", "XL", "XXL"],
                 title: "Gear IconX Black Cord-free Fitness Earbuds",
                 desc: "Samsung",
                 amount: "13990",
@@ -162,24 +181,34 @@ const ProductDetail = () => {
                     AirPods2,
                     AirPods3
                 ],
+                color: ["bg-primary", "bg-red-600", "bg-[#d4be8d]", "bg-[#838383]", "bg-[#f3f3f3]", "bg-[#0f73ad]"],
+                size: ["XS", "S", "M", "L", "XL", "XXL"],
                 title: "White 2nd Gen AirPods with Charging Case",
                 desc: "Apple",
                 amount: "14999",
                 details: "AirPods with Charging Case: More than 24 hours listening time,3 up to 18 hours talk time8. AirPods (single charge): Up to 5 hours listening time,1 up to 3 hours talk time2. 15 minutes in the case equals up to 3 hours listening time4 or up to 2 hours talk time. Warranty: 1 year. Warranty provided by Brand/Manufacturer",
             },
-        }[id];
+        };
 
-        setProduct(productData);
+        setProduct({ id, ...productData[id] });
     }, []);
-    const { addToCart } = useCart();
+    const { addToCart,incrementCartCount  } = useCart();
 
     const handleAddToCart = () => {
-        addToCart({
-            id: product.id,
-            title: product.title,
-            amount: product.amount,
-            image: product.img[0], 
-        });
+        if (product) {
+            addToCart({
+                id: product.id,
+                title: product.title,
+                image: product.img[0],
+                amount: product.amount,
+                quantity: 1,
+            });
+            toast({
+                description: `${product.title} Added To Yout Cart!`,
+            });
+            incrementCartCount();
+            
+        }
     };
     if (!product) return (
         <div className="container">
@@ -220,7 +249,38 @@ const ProductDetail = () => {
                                 ))
                             }
                         </TabsList>
-                            <button type="button" className="bg-slate-600 text-white md:text-lg text-base leading-normal font-medium block w-max h-12 px-6 mt-5 rounded-lg" onClick={handleAddToCart}>Add To Cart</button>
+                        <Tabs className="w-full my-5">
+                            <TabsList className="flex flex-wrap justify-start gap-3">
+                                {product.color && product.color.map((e, i) => (
+                                    <TabsTrigger key={i} value={e} className="text-primary border border-primary rounded-none p-2 data-[state=active]:bg-[#dbdbdb]">
+                                        <span className={`block w-[30px] h-[30px] ${e}`} />
+                                    </TabsTrigger>
+                                ))}
+                            </TabsList>
+                            {product.color && product.color.map((e, i) => (
+                                <TabsContent key={i} value={e} className="w-full">
+                                    <span className={`block w-full h-[30px] ${e}`} />
+                                </TabsContent>
+                            ))}
+                        </Tabs>
+                        <Tabs className="w-full mb-5">
+                            <TabsList className="flex flex-wrap justify-start gap-3">
+                                {product.size && product.size.map((e, i) => (
+                                    <TabsTrigger key={i} value={e} className="w-12 h-[50px] bg-transparent text-base font-semibold text-primary border border-primary rounded-none px-3 py-3 data-[state=active]:bg-yellow-500">
+                                        {e}
+                                    </TabsTrigger>
+                                ))}
+                            </TabsList>
+                            {product.size && product.size.map((e, i) => (
+                                <TabsContent key={i} value={e} className="text-lg font-semibold text-primary">{e}</TabsContent>
+                            ))}
+                        </Tabs>
+                        <Button
+                            className="bg-slate-600 text-white md:text-lg text-base leading-normal font-medium block w-max h-12 px-6 mt-5 rounded-lg"
+                            onClick={handleAddToCart}
+                        >
+                            Add To Cart
+                        </Button>
                     </div>
                 </div>
             </Tabs>

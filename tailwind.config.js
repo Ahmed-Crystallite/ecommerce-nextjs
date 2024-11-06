@@ -11,10 +11,23 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "0.5rem",
       screens: {
+        "xs": { "max": "575px" },
+        "sm": "576px",
+        "md": "768px",
+        "lg": "992px",
+        "xl": "1200px",
         "2xl": "1400px",
       },
+    },
+    screens: {
+      "xs": { "max": "575px" },
+      "sm": "576px",
+      "md": "768px",
+      "lg": "992px",
+      "xl": "1200px",
+      "2xl": "1400px",
     },
     extend: {
       colors: {

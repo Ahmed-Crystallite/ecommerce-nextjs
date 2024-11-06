@@ -42,7 +42,7 @@ const Card = ({
                                             className="transition-all duration-300 ease-in-out group-hover:scale-[1.03] group-hover:rounded-xl"
                                             priority={true}
                                         />
-                                        <h3 className={`sm:text-base text-sm leading-normal font-medium mt-2 ${elipses}`}>{title}</h3>
+                                        <h3 className={`2xl:text-lg sm:text-base text-sm leading-normal font-medium mt-2 ${elipses}`}>{title}</h3>
                                         <span className="block sm:text-sm text-xs font-light my-1">{desc}</span>
                                         <span className="block sm:text-xl text-base font-semibold mt-1 text-[rgb(3,_94,_94)]">Rs {amount}</span>
                                     </div>
