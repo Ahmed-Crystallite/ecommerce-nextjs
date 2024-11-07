@@ -73,7 +73,7 @@ const Footer = () => {
                 ],
               ],
             ].map(([title, list], i) => (
-              <div>
+              <div key={i}>
                 <h3 className="sm:text-[20px] text-[18px] leading-tight font-medium mb-3">{title}</h3>
                 <ul>
                   {list.map((e, i) => (
