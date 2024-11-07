@@ -13,6 +13,9 @@ export async function POST(request: NextRequest){
         const {email, password} = reqBody;
         console.log(reqBody);
 
+        if (!email || !password) {
+            return NextResponse.json({ error: "Email and password are required" }, { status: 400 });
+        }
         //check if user exists
         const user = await User.findOne({email})
         if(!user){
@@ -35,14 +38,16 @@ export async function POST(request: NextRequest){
             email: user.email
         }
         //create token
-        const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, {expiresIn: "1d"})
+        const token = jwt.sign(tokenData, process.env.TOKEN_SECRET!, {expiresIn: "1d"})
 
         const response = NextResponse.json({
             message: "Login successful",
             success: true,
         })
         response.cookies.set("token", token, {
-            httpOnly: true, 
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
             
         })
         return response;

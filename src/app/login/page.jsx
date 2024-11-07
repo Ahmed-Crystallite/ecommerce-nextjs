@@ -48,7 +48,7 @@ const Login = () => {
       console.log("Login success", response.data);
       router.push("/profile");
     } catch (error) {
-      console.log("Login failed", error.message);
+      console.log("Login failed", error.response?.data || error.message);
     } finally {
       setLoading(false);
     }
@@ -56,8 +56,9 @@ const Login = () => {
 
   useEffect(() => {
     const { email, password } = form.getValues();
-    setButtonDisabled(!(email.length > 0 && password.length > 0));
-  }, [form.watch("email"), form.watch("password")]);
+    const errors = form.formState.errors;
+    setButtonDisabled(!(email && password && Object.keys(errors).length === 0));
+}, [form.watch("email"), form.watch("password"), form.formState.errors]);
 
   return (
     <section>
