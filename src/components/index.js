@@ -1,23 +1,27 @@
-import dynamic from "next/dynamic";
-const Header = dynamic(() => import("./Header"));
-const Hero = dynamic(() => import("./Hero"));
-const Marquee = dynamic(() => import("./magicui/Marquee"));
-const MarqueeAnimatedList = dynamic(() => import("./magicui/Animated-List"));
-const Card = dynamic(() => import("./products/Card"));
-const Reviews = dynamic(() => import("./Reviews"));
-const CartContext = dynamic(() => import("./cart/CartContext"));
-const SearchInput = dynamic(() => import("./SearchInput"));
-const FilteredData = dynamic(() => import("./products/filters/FilteredData"));
-const PaymentForm = dynamic(() => import("./PaymentForm"));
-const Featured = dynamic(() => import("./Featured"));
-const WhyChoose = dynamic(() => import("./WhyChoose"));
-const Collections = dynamic(() => import("./Collections"));
-const Footer = dynamic(() => import("./Footer"));
-import { Button } from "./ui/Button";
-import { Checkbox } from "./ui/Checkbox";
-import { Combobox } from "./ComboBox";
-import { Slider } from "./ui/Slider";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/Tabs";
+import dynamic from "next/dynamic"
+// Dynamic Components
+const Header = dynamic(() => import("./Header"))
+const Hero = dynamic(() => import("./Hero"))
+const Marquee = dynamic(() => import("./magicui/Marquee"))
+const MarqueeAnimatedList = dynamic(() => import("./magicui/Animated-List"))
+const Card = dynamic(() => import("./products/Card"))
+const Reviews = dynamic(() => import("./Reviews"))
+const CartContext = dynamic(() => import("./cart/CartContext"))
+const SearchInput = dynamic(() => import("./SearchInput"))
+const FilteredData = dynamic(() => import("./products/filters/FilteredData"))
+const PaymentForm = dynamic(() => import("./PaymentForm"))
+const Featured = dynamic(() => import("./Featured"))
+const WhyChoose = dynamic(() => import("./WhyChoose"))
+const Collections = dynamic(() => import("./Collections"))
+const Footer = dynamic(() => import("./Footer"))
+const AlertBox = dynamic(() => import("./AlertBox"))
+
+// Shadcn UI
+import { Button } from "./ui/Button"
+import { Checkbox } from "./ui/Checkbox"
+import { Combobox } from "./ComboBox"
+import { Slider } from "./ui/Slider"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/Tabs"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -25,8 +29,8 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "./ui/Breadcrumb";
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/Popover";
+} from "./ui/Breadcrumb"
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/Popover"
 import {
   Command,
   CommandDialog,
@@ -37,7 +41,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "./ui/Command";
+} from "./ui/Command"
 import {
   Dialog,
   DialogContent,
@@ -45,13 +49,13 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./ui/Dialog";
+} from "./ui/Dialog"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./ui/Tooltip";
+} from "./ui/Tooltip"
 import {
   Sheet,
   SheetContent,
@@ -59,7 +63,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "./ui/Sheet";
+} from "./ui/Sheet"
 import {
   Drawer,
   DrawerClose,
@@ -69,11 +73,11 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "./ui/Drawer";
-import { Toaster } from "./ui/Toaster";
-import { Toast } from "./ui/Toast";
-import { Label } from "./ui/Label";
-import { Input } from "./ui/Input";
+} from "./ui/Drawer"
+import { Toaster } from "./ui/Toaster"
+import { Toast } from "./ui/Toast"
+import { Label } from "./ui/Label"
+import { Input } from "./ui/Input"
 import {
   Form,
   FormControl,
@@ -82,14 +86,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./ui/Form";
+} from "./ui/Form"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./ui/Select";
+} from "./ui/Select"
+
 export {
   Header,
   Hero,
@@ -171,4 +176,5 @@ export {
   SelectTrigger,
   SelectValue,
   Footer,
-};
+  AlertBox
+}

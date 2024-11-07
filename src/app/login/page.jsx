@@ -1,10 +1,10 @@
 "use client"
-import Link from "next/link";
-import axios from "axios";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { Button } from "@/components";
+import Link from "next/link"
+import axios from "axios"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { Button } from "@/components"
 import {
   Form,
   FormControl,
@@ -12,10 +12,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components";
-import { Input } from "@/components";
-import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+} from "@/components"
+import { Input } from "@/components"
+import { useRouter } from "next/navigation"
+import { useState, useEffect } from "react"
 
 const formSchema = z.object({
   email: z.string().email("Please use a valid email"),
@@ -26,12 +26,12 @@ const formSchema = z.object({
     .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
     .regex(/[a-z]/, "Password must contain at least one lowercase letter")
     .regex(/[0-9]/, "Password must contain at least one number"),
-});
+})
 
 const Login = () => {
-  const [loading, setLoading] = useState(false);
-  const [buttonDisabled, setButtonDisabled] = useState(true);
-  const router = useRouter();
+  const [loading, setLoading] = useState(false)
+  const [buttonDisabled, setButtonDisabled] = useState(true)
+  const router = useRouter()
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -39,26 +39,26 @@ const Login = () => {
       email: "",
       password: "",
     },
-  });
+  })
 
   const onLogin = async (user) => {
     try {
-      setLoading(true);
-      const response = await axios.post("/api/users/login", user);
-      console.log("Login success", response.data);
-      router.push("/profile");
+      setLoading(true)
+      const response = await axios.post("/api/users/login", user)
+      console.log("Login success", response.data)
+      router.push("/profile")
     } catch (error) {
-      console.log("Login failed", error.response?.data || error.message);
+      console.log("Login failed", error.response?.data || error.message)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   useEffect(() => {
-    const { email, password } = form.getValues();
-    const errors = form.formState.errors;
-    setButtonDisabled(!(email && password && Object.keys(errors).length === 0));
-}, [form.watch("email"), form.watch("password"), form.formState.errors]);
+    const { email, password } = form.getValues()
+    const errors = form.formState.errors
+    setButtonDisabled(!(email && password && Object.keys(errors).length === 0))
+  }, [form.watch("email"), form.watch("password"), form.formState.errors])
 
   return (
     <section>
@@ -141,7 +141,7 @@ const Login = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

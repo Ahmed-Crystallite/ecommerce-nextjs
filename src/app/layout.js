@@ -1,9 +1,8 @@
 import { Analytics } from "@vercel/analytics/react"
 import { Poppins } from "next/font/google"
 import "./globals.css"
-import { Footer, Header, Toaster } from "@/components"
+import { AlertBox, Footer, Header, Toaster } from "@/components"
 import { CartProvider } from "@/components/cart/CartContext"
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -22,6 +21,7 @@ export default function RootLayout({ children }) {
         <body className={poppins.className}>
           <Header />
           <main>
+            <AlertBox/>
             {children}
             <Analytics />
             <Toaster />
