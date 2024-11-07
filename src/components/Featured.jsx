@@ -17,11 +17,26 @@ const Featured = () => {
                 "New arrivals are now in!",
                 "Show Collection",
               ],
-              ["lg:col-span-3 col-span-6", Image2, "Basic t-shirts $30,91", "More details"],
-              ["lg:col-span-3 col-span-6", Image3, "Sale this summer", "View All"],
+              [
+                "lg:col-span-3 col-span-6",
+                Image2,
+                "Basic t-shirts $30,91",
+                "More details",
+              ],
+              [
+                "lg:col-span-3 col-span-6",
+                Image3,
+                "Sale this summer",
+                "View All",
+              ],
             ].map(([column, img, title, cta], i) => (
               <div key={i} className={`relative z-10 h-full ${column}`}>
-                <Image src={img} alt="models" className="w-full h-full" />
+                <Image
+                  src={img}
+                  alt="models"
+                  priority
+                  className="w-full h-full bg-gray-600"
+                />
                 <span className="block bg-[rgba(0,0,0,.28)] w-full h-full absolute top-0 bottom-0 right-0 left-0"></span>
                 <div className="absolute bottom-0 sm:-translate-y-8 -translate-y-6 sm:translate-x-6 translate-x-2">
                   <h3 className="xl:text-[25px] sm:text-[20px] text-[16px] font-medium text-white mb-5">
