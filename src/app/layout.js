@@ -1,6 +1,6 @@
 import { Analytics } from "@vercel/analytics/react"
 import { Poppins } from "next/font/google"
-import "./globals.css"
+import "./build.css"
 import { AlertBox, Footer, Header, Toaster } from "@/components"
 import { CartProvider } from "@/components/cart/CartContext"
 const poppins = Poppins({
